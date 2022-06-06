@@ -1,0 +1,142 @@
+/**
+ * style.css
+ * 
+ * The index page CSS of the simple games collection:
+ * - The body tag.
+ * - The header tag.
+ * - The navigation menu.
+ * - The main tag.
+ * - The footer tag.
+ * - Responsive for mobile devices.
+ */
+
+/**
+ * The body tag.
+ * 
+ * body
+ */
+ body {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+}
+
+/**
+ * The header tag.
+ * 
+ * header
+ */
+header {
+    height: 3rem;
+}
+
+/**
+ * The navigation menu.
+ * 
+ * nav > ul
+ * nav > ul > li
+ * nav > ul > li > a
+ * nav > ul > li > a:hover
+ * nav > ul > li > a:focus
+ */
+nav > ul {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: rgb(43, 43, 43);
+}
+nav > ul > li {
+    display: inline;
+}
+nav > ul > li > a {    
+    padding: 0 1rem 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+nav > ul > li > a:hover {
+    background-color: rgb(76, 76, 76);
+}
+nav > ul > li > a:focus {
+    outline: none;
+    padding: 0 0.8rem 0 0.8rem;
+    border: 0.2rem solid rgb(9, 150, 237);
+}
+
+/**
+ * The main tag.
+ * 
+ * main
+ */
+main {
+    margin: 0 auto 0 auto;
+    width: 1000px;
+    min-height: calc(100vh - 6rem);
+}
+
+/**
+ * The footer tag.
+ * 
+ * footer
+ * footer > h3
+ */
+footer {
+    height: 3rem;
+    background-color: rgb(55, 61, 71);
+}
+footer > h3 {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    text-align: center;
+}
+
+/**
+ * The loader style and animation.
+ * 
+ * #loader-div
+ * #loader
+ * @keyframes spin
+ */
+#loader-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#loader {
+    border: 1.6rem solid rgb(8, 90, 104);
+    border-radius: 50%;
+    border-top: 1.6rem solid rgb(27, 27, 27);
+    width: 12rem;
+    height: 12rem;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+ * Responsive for mobile devices.
+ * 
+ * @media screen and (max-width: 1000px)
+ * main
+ */
+@media screen and (max-width: 1000px) {
+    main {
+        width: 100%;
+    }
+}

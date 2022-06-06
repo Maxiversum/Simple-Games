@@ -1,0 +1,322 @@
+/**
+ * style.css
+ * 
+ * The full Tic-tac-toe CSS:
+ * - The body tag.
+ * - The header tag.
+ * - The navigation menu.
+ * - The main tag.
+ * - The grid where the player choose a gamemode.
+ * - The main grid where the game is played.
+ * - The grid where the stats of the game and the game buttons are.
+ * - One property for disable grid-items: pointer-events: none.
+ * - All the buttons.
+ * - The footer tag.
+ * - The loader style and animation.
+ * - Responsive for mobile devices.
+ * - Responsive for mobile devices. Smaller font-size and fixed grid-item height for min-width body.
+ */
+
+/**
+ * The body tag.
+ * 
+ * body
+ */
+body {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    min-width: 270px;
+}
+
+/**
+ * The header tag.
+ * 
+ * header
+ */
+header {
+    height: 3rem;
+}
+
+/**
+ * The navigation menu.
+ * 
+ * nav > ul
+ * nav > ul > li
+ * nav > ul > li > a
+ * nav > ul > li > a:hover
+ * nav > ul > li > a:focus
+ */
+nav > ul {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: rgb(43, 43, 43);
+}
+nav > ul > li {
+    display: inline;
+}
+nav > ul > li > a {    
+    padding: 0 1rem 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+nav > ul > li > a:hover {
+    background-color: rgb(76, 76, 76);
+}
+nav > ul > li > a:focus {
+    outline: none;
+    padding: 0 0.8rem 0 0.8rem;
+    border: 0.2rem solid rgb(9, 150, 237);
+}
+
+/**
+ * The main tag.
+ * 
+ * main
+ */
+main {
+    margin: 0 auto 0 auto;
+    width: 490px;
+    min-height: calc(100vh - 6rem);
+}
+
+/**
+ * The grid where the player choose a gamemode.
+ * 
+ * #grid-player
+ */
+#grid-player {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-size: x-large;
+}
+
+/**
+ * The main grid where the game is played.
+ * 
+ * #grid
+ * .grid-item
+ * .grid-item:hover
+ * .grid-item:focus
+ * .grid-span
+ */
+#grid {
+    display: grid;
+    grid-template-columns: 10rem 10rem 10rem;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+.grid-item {
+    width: 10rem;
+    height: 10rem;
+    background-color: rgb(8, 90, 104);
+    cursor: pointer;
+}
+.grid-item:hover {
+    background-color: rgb(10, 124, 144);
+}
+.grid-item:focus {
+    outline: none;
+    width: 9.6rem;
+    height: 9.6rem;
+    border: 0.2rem solid rgb(9, 150, 237);
+}
+.grid-span {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+/**
+ * The grid where the stats of the game and the game buttons are.
+ * 
+ * #grid-info
+ */
+#grid-info {
+    display: grid;
+    grid-template-columns: 18rem 12rem;
+    gap: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/**
+ * One property for disable grid-items: pointer-events: none.
+ * 
+ * .pointer-events-none
+ */
+.pointer-events-none {
+    pointer-events: none;
+}
+
+/**
+ * All the buttons.
+ * 
+ * button
+ * button:hover
+ * button:focus
+ * button:disabled
+ * .button-mode-inactive
+ * .button-mode-inactive:hover
+ */ 
+button {
+    /*all: unset;*/ /* Firefox 101.0 -> Accessibility -> Interactive elements must be labeled */
+    color: inherit;
+    border: none;
+    font: inherit;
+    width: 95%;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0.5ch;
+    background-color: rgb(37, 88, 30);
+    cursor: pointer;
+}
+button:hover {
+    background-color:rgb(20, 135, 5);
+}
+button:focus {
+    padding: 0.3rem;
+    border: 0.2rem solid rgb(9, 150, 237);
+}
+button:disabled {
+    background-color: rgb(89, 89, 89);
+    cursor: auto;
+}
+.button-mode-inactive {
+    background-color: rgb(105, 42, 0);
+}
+.button-mode-inactive:hover {
+    background-color: rgb(139, 69, 0);
+}
+
+/**
+ * The footer tag.
+ * 
+ * footer
+ * footer > h3
+ */
+footer {
+    height: 3rem;
+    background-color: rgb(55, 61, 71);
+}
+footer > h3 {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    text-align: center;
+}
+
+/**
+ * The loader style and animation.
+ * 
+ * #loader-div
+ * #loader
+ * @keyframes spin
+ */
+#loader-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#loader {
+    border: 1.6rem solid rgb(8, 90, 104);
+    border-radius: 50%;
+    border-top: 1.6rem solid rgb(27, 27, 27);
+    width: 12rem;
+    height: 12rem;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+ * Responsive for mobile devices.
+ * 
+ * @media screen and (max-width: 506px)
+ * body
+ * main
+ * #grid-player
+ * #grid-player > div
+ * #grid
+ * .grid-item
+ * .grid-item:focus
+ * .grid-span
+ * #grid-info
+ * footer > h3
+ */
+@media screen and (max-width: 506px) {
+    body {
+        font-size: 1.5rem;
+    }
+    main {
+        width: 100%;
+    }
+    #grid-player {
+        grid-template-columns: 1fr 1fr;
+        font-size: medium;
+    }
+    #grid-player > div {
+        width: auto;
+    }
+    #grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grid-item {
+        width: 100%;
+        height: 33vw; /* Not equals width (only almost) */
+    }
+    .grid-item:focus {
+        outline: none;
+        width: calc(100% - 0.4rem);
+        height: calc(100% - 0.4rem);
+        border: 0.2rem solid rgb(9, 150, 237);
+    }
+    .grid-span {
+        font-size: 60px;
+    }
+    #grid-info {
+        grid-template-columns: 2fr 1fr;
+        gap: 0;
+        padding: 0.2rem;
+    }
+    footer > h3 {
+        font-size: medium;
+    }
+}
+
+/**
+ * Responsive for mobile devices. Smaller font-size and fixed grid-item height for min-width body.
+ * 
+ * @media screen and (max-width: 311px) {
+ * body
+ * .grid-item
+ */
+@media screen and (max-width: 311px) {
+    body {
+        font-size: 1.2rem;
+    }
+    .grid-item {
+        height: 86.6667px; /* Match the .grid-item width at body -> min-width: 270px */
+    }
+}

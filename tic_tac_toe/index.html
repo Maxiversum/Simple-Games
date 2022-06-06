@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tic-tac-toe</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="icon.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Tic-tac-toe, noughts and crosses, Xs and Os, paper-and-pencil game">
+        <meta name="description" content="Tic-tac-toe (noughts and crosses or Xs and Os) is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. It is a solved game, with a forced draw assuming best play from both players.">
+        <meta name="author" content="Maxiversum">
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <noscript>Please enable JavaScript in your browser.</noscript>
+            <div id="loader-div"><div id="loader"></div></div>
+            <section>
+                <div id="grid-player">
+                    <button id="single-player"></button>
+                    <button id="multiplayer" class="button-mode-inactive"></button>
+                </div>
+            </section>
+            <section>
+                <div id="grid"></div>
+            </section>
+            <section>
+                <div id="grid-info">
+                    <div id="next"></div>
+                    <div id="result"></div>
+                    <div>
+                        <div>X win count: <span id="win-x-count">0</span></div>
+                        <div>O win count: <span id="win-o-count">0</span></div>
+                        <div>Drawn count: <span id="drawn-count">0</span></div>
+                    </div>
+                    <button id="new-game"></button>
+                    <button id="reset-current-game"></button>
+                    <button id="reset-points"></button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <h3>© Copyright - maxiversum.com - All rights reserved.</h3>
+        </footer>
+    </body>
+</html>

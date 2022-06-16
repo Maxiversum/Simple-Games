@@ -1,0 +1,195 @@
+
+/**
+ * The body tag.
+ * 
+ * body
+ */
+ body {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    font-size: xx-large;
+    margin: 0;
+}
+
+/**
+ * The header tag.
+ * 
+ * header
+ */
+header {
+    height: 3rem;
+}
+
+/**
+ * The navigation menu.
+ * 
+ * nav > ul
+ * nav > ul > li
+ * nav > ul > li > a
+ * nav > ul > li > a:hover
+ * nav > ul > li > a:focus
+ */
+nav > ul {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: rgb(43, 43, 43);
+}
+nav > ul > li {
+    display: inline;
+}
+nav > ul > li > a {    
+    padding: 0 1rem 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+nav > ul > li > a:hover {
+    background-color: rgb(76, 76, 76);
+}
+nav > ul > li > a:focus {
+    outline: none;
+    padding: 0 0.8rem 0 0.8rem;
+    border: 0.2rem solid rgb(9, 150, 237);
+}
+
+/**
+ * The main tag.
+ * 
+ * main
+ */
+main {
+    margin: 0 auto 0 auto;
+    width: 1000px;
+    min-height: calc(100vh - 6rem);
+}
+
+/**
+ * All the divs inside #game.
+ * 
+ * #game div
+ */
+#game div {
+    box-sizing: border-box;
+}
+
+/**
+ * The game style.
+ * 
+ * #game
+ * #subtext
+ * #board
+ * #board > *
+ * #board > [data-status="hidden"]
+ * #board > [data-status="mine"]
+ * #board > [data-status="number"]
+ * #board > [data-status="marked"]
+ */
+#game {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+}
+#subtext {
+    color: rgb(204, 204, 204);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+#board {
+    display: inline-grid;
+    padding: 10px;
+    grid-template-columns: repeat(var(--size), 60px);
+    grid-template-rows: repeat(var(--size), 60px);
+    gap: 4px;
+    background-color: rgb(119, 119, 119);
+    margin-bottom: 1rem;
+}
+#board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgb(187, 187, 187);
+    user-select: none;
+}
+#board > [data-status="hidden"] {
+    background-color: rgb(187, 187, 187);
+    cursor: pointer;
+}
+#board > [data-status="mine"] {
+    background-color: rgb(126, 19, 19);
+}
+#board > [data-status="number"] {
+    background-color: transparent;
+}
+#board > [data-status="marked"] {
+    background-color: rgb(91, 144, 1);
+}
+
+/**
+ * The footer tag.
+ * 
+ * footer
+ * footer > h3
+ */
+footer {
+    height: 3rem;
+    background-color: rgb(55, 61, 71);
+}
+footer > h3 {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    text-align: center;
+}
+
+/**
+ * The loader style and animation.
+ * 
+ * #loader-div
+ * #loader
+ * @keyframes spin
+ */
+#loader-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#loader {
+    border: 1.6rem solid rgb(8, 90, 104);
+    border-radius: 50%;
+    border-top: 1.6rem solid rgb(27, 27, 27);
+    width: 12rem;
+    height: 12rem;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+ * Responsive for mobile devices.
+ * 
+ * @media screen and (max-width: 1000px)
+ * main
+ */
+@media screen and (max-width: 1000px) {
+    main {
+        width: 100%;
+    }
+}

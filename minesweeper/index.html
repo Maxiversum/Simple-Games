@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Simple Games</title>
+        <title>Minesweeper</title>
         <link rel="stylesheet" href="style.css">
         <!--<link rel="icon" href="icon.png">-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="Simple Games">
-        <meta name="description" content="A collection of simple games.">
+        <meta name="keywords" content="Minesweeper">
+        <meta name="description" content="Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden 'mines' or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field.">
         <meta name="author" content="Maxiversum">
-        <script src="app.js"></script>
+        <script src="app.js" type="module"></script>
     </head>
     <body>
         <header>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <noscript>Please enable JavaScript in your browser.</noscript>
             <div id="loader-div"><div id="loader"></div></div>
-            <section>
-                <a href="tic_tac_toe/index.html">Tic-Tac-Toe</a>
-                <a href="minesweeper/index.html">Minesweeper</a>
+            <section id="game">
+                <div id="subtext">
+                    Mines Left: <span data-mine-count></span>
+                </div>
+                <div id="board"></div>
             </section>
         </main>
         <footer>
@@ -32,3 +34,4 @@
         </footer>
     </body>
 </html>
+<!--Original code from: https://www.youtube.com/watch?v=kBMnD_aElCQ-->

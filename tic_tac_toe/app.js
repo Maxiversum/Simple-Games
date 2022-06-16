@@ -17,25 +17,14 @@ window.addEventListener("load", () => {
     document.getElementById("loader-div").style.display = "none";
 })
 
-/**
- * After the document is fully loaded (DOMContentLoaded) it will load the init method.
- */
-document.addEventListener("DOMContentLoaded", init);
-
-/**
- * Initialize the document after the document is fully loaded (DOMContentLoaded).
- */
-function init()
-{
-    initSinglePlayerButton();
-    initMultiplayerButton();
-    initNewGameButton();
-    initResetCurrentGameButton();
-    initResetPointsButton();
-    initElements();
-    nextTextXO();
-    document.addEventListener("keydown", elementOnKeyDown);
-}
+initSinglePlayerButton();
+initMultiplayerButton();
+initNewGameButton();
+initResetCurrentGameButton();
+initResetPointsButton();
+initElements();
+nextTextXO();
+document.addEventListener("keydown", elementOnKeyDown);
 
 /**
  * Initialize the single player button.
